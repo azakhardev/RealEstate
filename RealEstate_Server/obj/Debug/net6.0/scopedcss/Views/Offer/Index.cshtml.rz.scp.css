@@ -1,0 +1,33 @@
+.Insertions[b-9g3x7ezaxl] {
+    margin-top:25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-inline: 13%;
+    justify-content: center;
+}
+
+    .Insertions div[b-9g3x7ezaxl] {
+        flex: 1;           
+    }
+
+.Category[b-9g3x7ezaxl] {
+    margin: 15px 20%;
+    display:flex;
+    background-color:#ff8600;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items:center;
+    padding:6px;
+    border-radius:20px;
+}
+
+.NavButtons[b-9g3x7ezaxl] {
+    margin-top: 15px;
+    margin-inline:20%;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 25px;
+}

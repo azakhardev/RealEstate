@@ -1,0 +1,171 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RealEstate_Server
+build_property.RootNamespace = RealEstate_Server
+build_property.ProjectDir = C:\Users\artem\Desktop\SSSVT predmety\PRG\4. Čtvrťák\Projekty\RealEstate_Server\RealEstate_Server\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\artem\Desktop\SSSVT predmety\PRG\4. Čtvrťák\Projekty\RealEstate_Server\RealEstate_Server
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/AdministratorTools/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclRvb2xzXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/AdministratorTools/CreateInsertion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclRvb2xzXENyZWF0ZUluc2VydGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/AdministratorTools/EditAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclRvb2xzXEVkaXRBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/AdministratorTools/EditInsertion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclRvb2xzXEVkaXRJbnNlcnRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2hhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/CreateCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/EditCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Login/LoginCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5DdXN0b21lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Login/LoginUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Components/AccountComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWNjb3VudENvbXBvbmVudFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Components/DeleteComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRGVsZXRlQ29tcG9uZW50XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Components/LoginComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTG9naW5Db21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Components/OfferComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcT2ZmZXJDb21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Components/PasswordComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUGFzc3dvcmRDb21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/_BackendLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYWNrZW5kTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/_CustomerLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DdXN0b21lckxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/AdministratorTools/CreateAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclRvb2xzXENyZWF0ZUFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rs8partb9l
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Chats.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8ym7fjjzck
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Insertions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5zZXJ0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-vx8fm505lz
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Properties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvcGVydGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-r6x853adkx
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Reply.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVwbHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-3lqyiq9dkt
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-j6cvsr3oer
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-l0ojwna5p3
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/Chats.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2hhdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pdksngp9sv
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/Insertions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5zZXJ0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-i5rv77y1w5
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Customer/Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-5k0k0xkj2a
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-lji0unagdn
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Offer/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-0afq28y030
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Offer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9g3x7ezaxl
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/Components/InsertionComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSW5zZXJ0aW9uQ29tcG9uZW50XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-y0p9oei53m
+
+[C:/Users/artem/Desktop/SSSVT predmety/PRG/4. Čtvrťák/Projekty/RealEstate_Server/RealEstate_Server/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ns3wj58cq2
