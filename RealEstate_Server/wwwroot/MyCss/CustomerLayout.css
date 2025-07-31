@@ -1,0 +1,45 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Login {
+    display: flex;
+    justify-content: right;
+    border-bottom: 1px solid;
+    border-color: gray;
+    font-size: 15px;
+}
+
+.CustomerMain {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto;
+}
+
+.Tools {
+    display: flex;
+    flex-direction: column;
+    background-color: #d9dad7;
+    font-size: 22px;
+    text-align: center;
+    border: 2px solid black;
+    min-height: 96vh;
+}
+
+    .Tools a {
+        background-color: #d9dad7;
+        border: 1px solid black;
+        padding-block: 15px;
+        color: black;
+        text-decoration: none;
+    }
+
+        .Tools a:hover {
+            color: white;
+            background-color: #393e46;
+        }
+
+.Current {
+    background-color: #393e46;
+}

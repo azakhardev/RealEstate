@@ -1,0 +1,40 @@
+﻿.Lists {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+    .Lists div {
+        flex: 1;
+    }
+
+        .Lists div button {
+            float: right;
+        }
+
+.property {
+    display: flex;
+    min-width: 100%;
+}
+
+.particulars {
+    display: flex;
+    gap: 10px;
+}
+
+.property td {
+    display: flex;
+    gap: 10px;
+    flex: auto;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+.Photos th {
+    width: 100%;
+}
+
+.photo td {
+    align-items: center;
+}

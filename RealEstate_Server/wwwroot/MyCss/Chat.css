@@ -1,0 +1,68 @@
+﻿.Chat header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: lightgray;
+    height: 75px;
+    border: 1px solid black;
+}
+
+.Content {
+    max-height: 780px;
+    height: 780px;
+    overflow-y: scroll;
+    margin-bottom: 5px;
+}
+
+.Message {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+    .Message span {
+        padding: 10px;
+        background-color: lightgray;
+        border-radius: 5px;
+        max-width: 45%;
+    }
+
+.incoming {
+    display: flex;
+    margin-left: 15px;
+    justify-content: left;
+}
+
+.outgoing {
+    display: flex;
+    margin-right: 15px;
+    justify-content: right;
+}
+
+    .outgoing span {
+        background-color: cornflowerblue;
+    }
+
+.MessageBox {
+    background-color: lightgray;
+    padding: 5px;
+    height: 65px;
+}
+
+.prompt {
+    display: flex;
+    height: 35px;
+    gap: 10px;
+}
+
+    .prompt input {
+        flex: 13;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .prompt button {
+        flex: 1;
+    }

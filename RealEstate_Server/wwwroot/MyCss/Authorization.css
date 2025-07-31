@@ -1,0 +1,41 @@
+﻿.Content {
+    display: flex;
+    flex-direction: column;
+}
+
+.Type {
+    margin-top:12vh;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+    .Type a {
+        text-decoration: none;
+        color: black;
+        font-size: 24px;
+    }
+
+        .Type a:hover {
+            text-decoration: underline;
+            text-decoration-color:orange;
+        }
+
+form {
+    border-radius: 25px;
+    padding: 10px;
+    background-color: lightskyblue;
+    margin-inline: 25% !important;
+    margin-top: 3vh !important;
+}
+
+.Buttons {
+    display:flex;
+    justify-content:right;
+    gap:15px;
+}
+
+    .Buttons a {
+        color:white;
+        text-decoration:none;
+    }

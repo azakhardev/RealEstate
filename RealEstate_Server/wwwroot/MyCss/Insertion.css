@@ -1,0 +1,13 @@
+﻿form {
+    margin: 2%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+textarea {
+    height: 10vh;
+    resize: none;
+}

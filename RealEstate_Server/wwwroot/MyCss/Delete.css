@@ -1,0 +1,13 @@
+﻿.Box {
+    margin-top: 5%;
+    margin-inline: 5%;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding:10px;
+}
+
+.buttons {
+    display:flex;
+    justify-content:space-between;
+    margin-top:1%;
+}
