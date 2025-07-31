@@ -1,0 +1,11 @@
+﻿form {
+    margin:2%;
+}
+
+.particulars {
+    display:flex;
+}
+
+    .particulars div {
+        flex:1;
+    }

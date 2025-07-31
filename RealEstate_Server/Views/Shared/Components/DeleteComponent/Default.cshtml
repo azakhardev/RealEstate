@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Submit";
+}
+<link rel="stylesheet" href="~/MyCss/Delete.css">
+
+<div class="Box">
+    <div class="alert alert-danger"> Are you sure you want to delete @ViewBag.Name ?</div>
+    <div class="buttons">
+        <a class="btn btn-primary" asp-controller="Admin" asp-action="@ViewBag.Old">Cancel</a>
+        <a class="btn btn-success" asp-controller="AdministratorTools" asp-action="@ViewBag.Action" asp-route-id="@ViewBag.Id" asp-route-all="@ViewBag.All">Yes</a>
+    </div>
+</div>

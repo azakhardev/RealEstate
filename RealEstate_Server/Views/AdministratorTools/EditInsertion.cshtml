@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Insertion Edit";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+@model InsertionModel
+
+<div>
+    <vc:insertion-component insertion="Model" action="EditInsertion" all="@ViewBag.All"></vc:insertion-component>
+</div>

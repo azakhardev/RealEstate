@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+@model LoginUser
+<link rel="stylesheet" href="~/MyCss/Authorization.css" />
+
+<head>
+    <style>
+        footer {
+            display: none
+        }
+    </style>
+</head>
+
+<div class="Content">
+    <div class="Type">
+        @if (ViewBag.Action == "LoginCustomer")
+        {
+            <a asp-controller="Login" asp-action="LoginCustomer" style="text-decoration:underline; text-decoration-color: orange">Customer </a>
+            <a asp-controller="Login" asp-action="LoginUser">Admin/Broker</a>
+        }
+        else
+        {
+            <a asp-controller="Login" asp-action="LoginCustomer">Customer </a>
+            <a asp-controller="Login" asp-action="LoginUser" style="text-decoration:underline; text-decoration-color: orange">Admin/Broker</a>
+        }
+    </div>
+
+    <div>
+        <form asp-controller="Login" asp-action="@ViewBag.Action">
+            <div>
+                <label asp-for="Username">Username:</label>
+                <input asp-for="Username" class="form-control">
+            </div>
+
+            <div>
+                <label asp-for="Password">Password:</label>
+                <input type="password" asp-for="Password" class="form-control">
+            </div>
+
+            <div style="text-align: right; margin-top: 15px">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Chat";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+<link rel="stylesheet" href="~/MyCss/Reply.css">
+@model Message
+<div class="Chat">
+    <header>Chat with @ViewBag.Request.Name  @ViewBag.Request.Surname</header>
+
+    <div class="Content">
+        <div class="Message">@ViewBag.Request.Message</div>
+    </div>
+
+    <div class="MessageBox">
+        <form asp-controller="AdministratorTools" asp-action="StartChat" asp-route-requestId="@ViewBag.Request.Id">
+            <input type="hidden" asp-for="ToBroker">
+            <div class="prompt">
+            <input asp-for="Text" placeholder="Write message" required/>
+            <button class="btn btn-primary">Start Chat</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+﻿<div style="max-width: 370px">
+    <a  class="text-decoration-none" asp-controller="Offer" asp-action="Detail" asp-route-id="@ViewBag.Insertion.Id">
+        <img class="offerImage" src="~/Images/InsertionPhotos/@ViewBag.Insertion.Photo" style="max-width:370px; height:250px;">
+        <h2 style="color:#ff8600">@ViewBag.Insertion.Title</h2>
+    </a>
+    <h4 style="color:green;">@ViewBag.Insertion.Price Kč</h4>
+    <div>
+        @ViewBag.Insertion.ShortDescription
+    </div>
+</div>

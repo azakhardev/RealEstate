@@ -1,0 +1,78 @@
+﻿@model User
+
+<form asp-controller="AdministratorTools" asp-action="@ViewBag.Action" asp-route-id="@ViewBag.Id">
+    <div class="mb-4 mt-1">
+        @if (ViewBag.Action == "CreateAccount")
+        {
+            <div class="vcenter">
+                <img src="~/Images/UserImages/Default_PfP.jpg" style="border-radius:44px;" />
+            </div>
+            <div class="vcenter">
+                <label asp-for="Photo">Photo path:</label>
+                <input type="file" asp-for="Photo" />
+            </div>
+        }
+        else
+        {
+            <div class="vcenter">
+                <img src="~/Images/UserImages/@ViewBag.Photo" style="border-radius:44px;" />
+            </div>
+            <div class="vcenter">
+                <label asp-for="Photo">Photo path:</label>
+                <input type="file" asp-for="Photo"/>
+            </div>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Username">Username:</label>
+        <input asp-for="Username" class="form-control" required />
+        <span asp-validation-for="Username" class="alert-danger"></span>
+    </div>
+    @if (ViewBag.Action == "CreateAccount")
+    {
+        <div class="mb-3">
+            <label asp-for="Password">Password:</label>
+            <input type="password" asp-for="Password" class="form-control" required />
+        </div>
+    }
+    <div class="mb-3">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Surname">Surname:</label>
+        <input asp-for="Surname" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email">Email:</label>
+        <input type="email" asp-for="Email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone">Phone number:</label>
+        <input type="tel" asp-for="Phone" class="form-control" />
+    </div>
+    @if (ViewBag.Role == "Administrator")
+    {
+        <div class="mb-3">
+            <label asp-for="Role">Broker</label>
+            <input type="radio" name="role" value="Broker" asp-for="Role" checked />
+            <label asp-for="Role">Admin</label>
+            <input type="radio" name="role" value="Administrator" asp-for="Role" />
+        </div>
+    }
+
+    @if (ViewBag.Action == "CreateAccount")
+    {
+        <div class="Buttons mb-3">
+            <button type="submit" class="btn btn-outline-success"> Create Account </button>
+        </div>
+    }
+    else
+    {
+        <div class="Buttons mb-3">
+            <button type="button" class="btn btn-primary"><a asp-controller="AdministratorTools" asp-action="ChangePassword" asp-route-id="@Model.Id">Change Password</a></button>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+        </div>
+    }
+</form>

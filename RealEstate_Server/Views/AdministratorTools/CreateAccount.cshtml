@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Backend";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+@* @using RealEstate_Server.Models.Tables; *@
+<link rel="stylesheet" href="~/MyCss/Authorization.css" />
+
+@model User
+
+<div>
+    <vc:account-component user="Model" action="CreateAccount"></vc:account-component>
+</div>

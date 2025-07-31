@@ -1,0 +1,77 @@
+﻿@{
+    if (ViewBag.All)
+        ViewBag.Title = "All Insertions";
+    else
+        ViewBag.Title = "Your Insertions";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+
+    int next = ViewBag.Page;
+    int prev = ViewBag.Page;
+    if (ViewBag.Page * 8 < ViewBag.Count)
+        next += 1;
+    if (ViewBag.Page > 1)
+        prev -= 1;
+
+    int i = 1;
+}
+
+<div>
+    @if (ViewBag.Insertions.Count != 0)
+    {
+        <div class="d-flex flex-wrap m-xl-5 mt-3" style="gap:10px">
+
+            @foreach (Insertion insertion in ViewBag.Insertions)
+            {
+
+                if (i <= 8 * ViewBag.Page && i > ViewBag.Page * 8 - 8)
+                {
+                    @if (insertion.Disabled)
+                    {
+                        <div class="card" style="flex:1;min-width:345px;max-width:345px; padding:5px; background-color: lightgray;">
+                            <img class="offerImage" src="~/Images/InsertionPhotos/@insertion.Photo" style="max-width:100%; height:250px;">
+                            <h2 style="color:#ff8600">@insertion.Title</h2>
+                            <h3 style="color: green">@insertion.Price Kč</h3>
+                            <div style="display:grid; margin:5px; grid-template-columns: 1fr 1fr 1fr; gap:35px;">
+                                <a asp-controller="Offer" asp-action="Detail" asp-route-id="@insertion.Id" class="btn btn-primary">View</a>
+                                <a asp-controller="AdministratorTools" asp-action="EditInsertion" asp-route-id="@insertion.Id" asp-route-all="@ViewBag.All" class="btn btn-primary"> Edit</a>
+                                <a asp-controller="Admin" asp-action="Delete" asp-route-act="DeleteInsertion" asp-route-name="Insertion" asp-route-id="@insertion.Id" asp-route-old="Insertions" asp-route-all="@ViewBag.All" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="card" style="flex:1;min-width:345px;max-width:345px; padding:5px; ">
+                            <img class="offerImage" src="~/Images/InsertionPhotos/@insertion.Photo" style="max-width:100%; height:250px;">
+                            <h2 style="color:#ff8600">@insertion.Title</h2>
+                            <h3 style="color: green">@insertion.Price Kč</h3>
+                            <div style="display:grid; margin:5px; grid-template-columns: 1fr 1fr 1fr; gap:35px;">
+                                <a asp-controller="Offer" asp-action="Detail" asp-route-id="@insertion.Id" class="btn btn-primary">View</a>
+                                <a asp-controller="AdministratorTools" asp-action="EditInsertion" asp-route-id="@insertion.Id" asp-route-all="@ViewBag.All" class="btn btn-primary"> Edit</a>
+                                <a asp-controller="Admin" asp-action="Delete" asp-route-act="DeleteInsertion" asp-route-name="Insertion" asp-route-id="@insertion.Id" asp-route-old="Insertions" asp-route-all="@ViewBag.All" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    }
+                }
+                i++;
+            }
+        </div>
+    }
+    else
+    {
+        <div style="text-align: center; font-weight: bold; font-size: 36px;">
+            You have no offers
+        </div>
+    }
+    <div class="Buttons">
+        @if (ViewBag.Insertions.Count > 8)
+        {
+            <div class="Pages">
+                <a asp-controller="Admin" asp-action="Insertions" asp-route-all="@ViewBag.All" asp-route-id="@prev" class="btn btn-primary">Previous</a>
+                <a asp-controller="Admin" asp-action="Insertions" asp-route-all="@ViewBag.All" asp-route-id="@next" class="btn btn-primary">Next</a>
+            </div>
+        }
+        <a asp-controller="AdministratorTools" asp-action="CreateInsertion" asp-route-userId="@ViewBag.User" class="btn btn-success" style="float:right; margin-right:25px;">
+            Add Insertion
+        </a>
+    </div>
+</div>

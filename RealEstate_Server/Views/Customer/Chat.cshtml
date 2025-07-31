@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Chat";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+<link rel="stylesheet" href="~/MyCss/Chat.css">
+
+@model Message
+<div class="Chat">
+    <header>Chat with @ViewBag.Broker - @ViewBag.ChatTitle</header>
+
+    <div class="Content">
+        @foreach (Message m in ViewBag.Messages)
+        {
+            if (m.ToBroker)
+            {
+                <div class="Message outgoing"><span>@m.Text</span></div>
+            }
+            else
+            {
+                <div class="Message incoming"><span>@m.Text</span></div>
+            }
+        }
+    </div>
+
+    <div class="MessageBox">
+        <form asp-controller="Customer" asp-action="Chat">
+            <input type="hidden" asp-for="ToBroker"/>
+            <input type="hidden" asp-for="ChatId"/>
+            <div class="prompt">
+                <input asp-for="Text" placeholder="Write message" required />
+                <button class="btn btn-primary">Send message</button>
+            </div>
+        </form>
+    </div>
+</div>

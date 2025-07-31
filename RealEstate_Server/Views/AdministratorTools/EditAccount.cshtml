@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Account Details";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+<link rel="stylesheet" href="~/MyCss/Authorization.css" />
+
+<head>
+    <style>
+        footer {
+            display: none;
+        }
+    </style>
+</head>
+
+@model User
+<div>
+    <vc:account-component user="Model" action="EditAccount"></vc:account-component>
+</div>

@@ -1,0 +1,5 @@
+﻿.Buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 3%;
+}

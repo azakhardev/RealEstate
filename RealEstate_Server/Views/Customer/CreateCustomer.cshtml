@@ -1,0 +1,41 @@
+﻿@model Customer
+
+<head>
+    <style>
+        footer {
+            display: none
+        }
+    </style>
+</head>
+
+<link rel="stylesheet" href="~/MyCss/Authorization.css" />
+
+<form asp-controller="Customer" asp-action="CreateCustomer">
+    <div class="mb-3">
+        <label asp-for="Username">Username:</label>
+        <input asp-for="Username" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password">Password:</label>
+        <input type="password" asp-for="Password" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Surname">Surname:</label>
+        <input asp-for="Surname" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email">Email:</label>
+        <input type="email" asp-for="Email" class="form-control" required />
+    </div>
+    <div class="mb-3" style="display:flex; justify-content:right">
+        <button type="submit" class="btn btn-success">Create Account</button>
+    </div>
+</form>

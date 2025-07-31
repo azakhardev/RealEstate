@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home"; 
+}
+<link rel="stylesheet" href="~/MyCss/NoUnderline.css" />
+
+@model Filter
+<main>
+    <div class="Slider vcenter">
+        <h1 style="color: white; margin: 0px; margin-bottom: 2vh">Choose your property</h1>
+        <div>
+            <form asp-controller="Filters" asp-action="Filter">
+                <input type="text" asp-for="Location" style="border-radius: 5px; border: 1px black; padding: 4px; height: 35px; width: 200px" placeholder="Find by location">
+                <button action="post" style="font-size: 16px; background: #ff8600; text-decoration: none; color: white; border-radius: 5px; padding-block: 5px; padding-inline: 15px">FIND</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="Category">
+        <div style="background-image: url('Images/InsertionSmallPhotos/home-img-03-442-280.jpg')">
+            <a class="thicker" asp-controller="Filters" asp-action="Category" asp-route-category="Flat">
+                <div class="darker vcenter">
+                    <p>Flats</p>
+                    <p>@ViewBag.FlatCount offers</p>
+                </div>
+            </a>
+        </div>
+        <div style="background-image: url('Images/InsertionSmallPhotos/home-img-02-442-280.jpg')">
+            <a class="thicker" asp-controller="Filters" asp-action="Category" asp-route-category="Land">
+                <div class="darker vcenter">
+                    <p>Lands</p>
+                    <p>@ViewBag.LandCount offers</p>
+                </div>
+            </a>
+        </div>
+        <div style="background-image: url('Images/InsertionSmallPhotos/home-img-01-442-280.jpg')">
+            <a class="thicker" asp-controller="Filters" asp-action="Category" asp-route-category="House">
+                <div class="darker vcenter">
+                    <p>Houses</p>
+                    <p>@ViewBag.HouseCount offers</p>
+                </div>
+            </a>
+        </div>
+        <div style="background-image: url('Images/InsertionSmallPhotos/home-img-04-442-280.jpg')">
+            <a class="thicker" asp-controller="Filters" asp-action="Category" asp-route-category="Commercial">
+                <div class="darker vcenter">
+                    <p>Commercials</p>
+                    <p>@ViewBag.CommercialCount offers</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="Offer">
+        @foreach (Insertion item in ViewBag.LatestOffers)
+        {
+            <vc:offer-component insertion="@item"></vc:offer-component>
+        }
+    </div>
+
+</main>

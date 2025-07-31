@@ -1,0 +1,56 @@
+﻿@{
+    if (ViewBag.All)
+        ViewBag.Title = "All Requests";
+    else
+        ViewBag.Title = "Your Requests";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+    MyContext context = new MyContext();
+}
+<link rel="stylesheet" href="~/MyCss/Table.css">
+<div class="Requests">
+    @if (ViewBag.Count == 0)
+    {
+        <div style="text-align: center; font-weight: bold; font-size: 36px;">You have no requests </div>
+    }
+    else
+    {
+        <table width="100%">
+            <tr class="header">                
+                <th>Surname</th>
+                <th>Insertion</th>
+                <th>Date</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (Request request in ViewBag.Requests)
+            {
+                <tr>
+                    <td>@request.Surname</td>
+                    <td>@context.Insertions.Find(request.InsertionId).Title</td>
+                    <td>@request.Date</td>
+                    <td><a href="mailto:@request.Email">@request.Email</a></td>
+
+                    @if (request.Message.Length > 50)
+                    {
+                        <td> @request.Message.Substring(0,50)...</td>
+                    }
+                    else
+                    {
+                        <td>@request.Message</td>
+                    }
+                    @if (request.CustomerId != 1)
+                    {
+                        <td><a asp-controller="Admin" asp-action="Reply" asp-route-id="@request.Id">Answer</a></td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    <td><a asp-controller="Admin" asp-action="Delete" asp-route-act="DeleteRequest" asp-route-name="Request" asp-route-id="@request.Id" asp-route-old="Requests" asp-route-all="@ViewBag.All" style="color:red;">Delete</a></td>
+                </tr>
+            }
+        </table>
+    }
+</div>

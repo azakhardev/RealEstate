@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RealEstate</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealEstate_Server.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyCss/Layout.css" />
+
+</head>
+
+@section Scripts {
+    <script src="~/MyJs/Layout.js"></script>
+}
+
+<body>
+    <header>
+        <top>
+            <div class="LoggedAs">
+                Logged as: @ViewBag.Username
+            </div>
+            <div class="Login">
+                <a class="nav-link text-dark" asp-controller="Admin" asp-action="Exit">Back to website</a>
+                @if (ViewBag.Role == "Administrator")
+                {
+                    <a class="nav-link text-dark" asp-controller="AdministratorTools" asp-action="CreateAccount">Create user</a>
+                }
+                @if (ViewBag.Authenticated)
+                {
+                    <a class="nav-link text-dark" asp-controller="AdministratorTools" asp-action="EditAccount">Edit Account</a>
+                    <a class="nav-link text-dark" asp-controller="Login" asp-action="Logout">Logout</a>
+                }
+            </div>
+        </top>
+
+    </header>
+
+
+    <div>
+        <main role="main" class="BackendMain">
+            <div class="Tools">
+                <a asp-controller="Admin" asp-action="Insertions" asp-route-all="false">Your Offers</a>
+                <a asp-controller="Admin" asp-action="Requests" asp-route-all="false">Your Requests</a>
+                <a asp-controller="Admin" asp-action="Chats" asp-route-all="false">Your Chats</a>
+                @if (ViewBag.Role == "Administrator")
+                {
+                    <a asp-controller="Admin" asp-action="Insertions" asp-route-all="true">All Offers</a>                    
+                    <a asp-controller="Admin" asp-action="Requests" asp-route-all="true">All Requests</a>
+                    <a asp-controller="Admin" asp-action="Chats" asp-route-all="true">All Chats</a>
+                    <a asp-controller="Admin" asp-action="Users">All Users</a>
+                    <a asp-controller="Admin" asp-action="Properties">Properties</a>
+                }
+            </div>
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

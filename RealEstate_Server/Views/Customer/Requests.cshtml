@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Requests";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+
+    MyContext context = new MyContext();
+}
+<link rel="stylesheet" href="~/MyCss/Table.css">
+
+<div class="Requests">
+    @if (ViewBag.Count == 0)
+    {
+        <div style="text-align: center; font-weight: bold; font-size: 36px;">You have no requests </div>
+    }
+    else
+    {
+        <table width="100%">
+            <tr class="header">
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Date</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th></th>
+            </tr>
+            @foreach (Request request in ViewBag.Requests)
+            {
+                User user = context.Users.Find(context.Insertions.Find(request.InsertionId).UserId);
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Surname</td>
+                    <td>@request.Date</td>
+                    <td><a href="mailto:@user.Email">@user.Email</a></td>
+
+                    @if (request.Message.Length > 50)
+                    {
+                        <td> @request.Message.Substring(0,50)...</td>
+                    }
+                    else
+                    {
+                        <td>@request.Message</td>
+                    }
+                    <td><a asp-controller="Customer" asp-action="DeleteRequest" asp-route-id="@request.Id" style="color:red;">Delete</a></td>
+                </tr>
+            }
+        </table>
+    }
+</div>

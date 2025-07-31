@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = ViewBag.Insertion.Title;
+}
+
+@section Scripts {
+    <script src="~/MyJs/Detail.js"></script>
+}
+<link rel="stylesheet" href="~/MyCss/OfferDetail.css" />
+
+@model Request
+<main>
+    @if (ViewBag.Role == "Administrator")
+    {
+        <a asp-controller="AdministratorTools" asp-action="EditInsertion" asp-route-id="@ViewBag.Insertion.Id" class="EditA">
+            <div class="Edit">
+                Edit Insertion
+            </div>
+        </a>
+    }
+
+    <div class="Photos">
+        <div class="photoBig">
+            <img src="~/Images/InsertionPhotos/@ViewBag.Insertion.Photo" style="width:100%; height50vh;">
+        </div>
+
+        <div class="photoList">
+            
+            <div class="photoSmall">
+                <img src="~/Images/InsertionPhotos/@ViewBag.Insertion.Photo" style="width:270px; height:200px">
+            </div>
+            @foreach (Photo item in ViewBag.Photos)
+            {
+                @if (!item.Main)
+                {
+                    <div class="photoSmall">
+                        <img src="~/Images/InsertionSmallPhotos/@item.Path" style="width:270px; height:200px;">
+                    </div>            
+                }
+            }
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-top:5px;">
+            <div style="display:flex; align-items:center; flex:1; justify-content:space-between">
+                <span class="previousPhotos btn btn-warning">Previous</span>
+                <span class="nextPhotos btn btn-warning">Next</span>
+            </div>
+            <div class="mt-2" style="flex:9; display:flex; justify-content:right;">
+                <span>
+                    @if (ViewBag.Role == "Customer" && !ViewBag.Favourite)
+                    {
+                        <a asp-controller="Customer" asp-action="AddFavourite" asp-route-id="@ViewBag.Insertion.Id" class="EditA">
+                            <div class="Fav btn btn-outline-danger">
+                                Add to Favourite
+                            </div>
+                        </a>
+                    }
+                    else if (ViewBag.Role == "Customer" && ViewBag.Favourite)
+                    {
+                        <a asp-controller="Customer" asp-action="DeleteFavourite" asp-route-id="@ViewBag.Insertion.Id" class="EditA">
+                            <div class="Fav btn btn-danger">
+                                Delete from Favorite
+                            </div>
+                        </a>
+                    }
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="Description">
+        <div class="PcDes">
+            <h2 style="color: orange">@ViewBag.Insertion.Title</h2>
+            <h2 style="color: green; text-align: right  ">@ViewBag.Insertion.Price Kč</h2>
+            <h3 style="color: gray">@ViewBag.Insertion.Location</h3>
+            <h4 style="color: gray; text-align: right">@ViewBag.Insertion.Area m<sup>2</sup></h4>
+        </div>
+
+    </div>
+
+    <div class="Description2" style="margin-top:15px;">
+        <p>
+            @ViewBag.Insertion.Description
+        </p>
+    </div>
+
+    <div class="Tables">
+
+        <table>
+            @{
+                int i = 1;
+                int leftCount = 0;
+                foreach (KeyValuePair<string, string> item in ViewBag.Properties)
+                {
+                    if (i % 2 == 1)
+                    {
+                        <tr>
+                            <th>@item.Key</th>
+                            <td>@item.Value</td>
+                        </tr>
+                        leftCount++;
+                    }
+                    i++;
+                }
+            }
+        </table>
+
+        <table>
+            @{
+                int righCount = 0;
+                i = 1;
+                @foreach (KeyValuePair<string, string> item in ViewBag.Properties)
+                {
+                    if (i % 2 == 0)
+                    {
+                        <tr>
+                            <th>@item.Key</th>
+                            <td>@item.Value</td>
+                        </tr>
+                        righCount++;
+                    }
+                    i++;
+                }
+
+                if (righCount < leftCount)
+                {
+                    <tr>
+                        <th></th>
+                        <td></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
+    <div class="Other">
+
+        <div class="block">
+            <h2 style="color: #ff8600; text-align: center; margin-bottom: 5px">Contact the broker</h2>
+            <div class="Vendor">
+                <img src="~/Images/UserImages/@ViewBag.User.Photo" style="border-radius:40px;">
+                <div style="display: flex; align-items: center; justify-items: right; flex-direction: column; justify-self: left">
+                    <h3>@ViewBag.User.Name @ViewBag.User.Surname</h3>
+                    <div>Email: <a href="mailto:@ViewBag.User.Email">@ViewBag.User.Email</a></div>
+                    <div>Telephone: <a href="tel:@ViewBag.User.Phone">@ViewBag.User.Phone</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <h2 style="color: #ff8600; text-align: center; margin-bottom: 5px">Write to us, we'll get back to you</h2>
+            <form asp-controller="Offer" asp-action="Detail" class="Contact">
+                <input type="hidden" asp-for="Id" value="0" />
+                <input type="hidden" asp-for="InsertionId" />
+                <input type="text" asp-for="Name" placeholder="Your name" required>
+                <input type="tel" asp-for="Surname" placeholder="Your surname" required>
+                <input type="email" asp-for="Email" class="mail" placeholder="E-mail" required>
+                <textarea style="resize: none" asp-for="Message" placeholder="Write us a message"></textarea>
+                <button type="submit" class="btn btn-outline-success">SEND REQUEST</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="Map">
+        <iframe style="border:none" src="https://en.frame.mapy.cz/s/pafajurale" frameborder="0"></iframe>
+    </div>
+</main>

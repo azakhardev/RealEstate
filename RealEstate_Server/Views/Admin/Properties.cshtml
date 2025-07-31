@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Properties";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+    int i = 0;
+}
+
+<head>
+    <link rel="stylesheet" href="~/MyCss/Table.css" />
+
+    <style>
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-inline:25%;            
+        }
+
+        .buttons a{
+            color:white;
+            text-decoration:none;
+        }
+    </style>
+
+</head>
+
+@model List<Property>
+<div class="Properties">
+    <form method="post" asp-controller="AdministratorTools" asp-action="SaveProperties">
+
+        <div id="PropertiesList">
+            <table style="margin-inline:25%;width:50%">
+                <tbody id="PropertyTable">
+                    <tr class="header">
+                        <th>Property Name</th>
+                        <th></th>
+                    </tr>
+                    @foreach (Property property in Model)
+                    {
+                        <tr>
+                            <td> <input type="text" asp-for="@Model[i].PropertyName" value="@Model[i].PropertyName" required/> <input type="hidden" asp-for="@Model[i].Id" /></td>
+                            <td> <a asp-controller="Admin" asp-action="Delete" asp-route-act="DeleteProperty" asp-route-name="Property" asp-route-id="@property.Id" asp-route-old="Properties" style="color:red;">Delete Property</a></td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="buttons mt-2">
+            <button class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-primary"><a asp-controller="AdministratorTools" asp-action="AddProperty">Add Property</a></button>
+        </div>
+    </form>
+
+</div>

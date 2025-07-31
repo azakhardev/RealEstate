@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/MyCss/Table.css" />
+
+<div class="Users" style="width:100%;">
+    <table>
+        <tr class="header">
+            <th>Username</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Role</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (User user in ViewBag.Users)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td><a href="mailto:@user.Email">@user.Email</a></td>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+                <td>@user.Role</td>
+                <td><a asp-controller="AdministratorTools" asp-action="EditAccount" asp-route-id="@user.Id">Edit</a></td>                
+                <td> @if (user.Id != this.ViewBag.UserId)
+                    {
+                        <a asp-controller="Admin" asp-action="Delete" asp-route-act="DeleteAccount" asp-route-name="User" asp-route-id="@user.Id" asp-route-old="Users" style="color:red;">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <div style="float:right; margin-inline:3%; margin-top:5px;">
+    <a asp-controller="AdministratorTools" asp-action="CreateAccount" class="btn btn-success" >Create account</a>
+    </div>
+</div>

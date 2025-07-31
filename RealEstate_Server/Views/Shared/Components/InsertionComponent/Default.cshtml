@@ -1,0 +1,223 @@
+﻿<link rel="stylesheet" href="~/MyCss/Insertion.css">
+<link rel="stylesheet" href="~/MyCss/InsertionModel.css">
+
+@model InsertionModel
+<form asp-controller="AdministratorTools" asp-action="@ViewBag.Action" asp-route-all="@ViewBag.All">
+    <input type="hidden" asp-for="Insertion.Id" />
+    <input type="hidden" asp-for="Insertion.UserId" />
+    @if (ViewBag.Admin != null && ViewBag.Admin)
+    {
+        <div class="mb-3">
+            <label asp-for="Username">User:</label>
+            <input asp-for="Username" class="form-control" required />
+        </div>
+    }
+    else
+    {
+        <input type="hidden" asp-for="Username" />
+    }
+    <div class="mb-3">
+        <label asp-for="Insertion.Title">Title:</label>
+        <input asp-for="Insertion.Title" class="form-control" required />
+    </div>
+
+    <div class="particulars">
+        <div class="mb-3">
+            <label asp-for="Insertion.Price">Price (Kč):</label>
+            <input type="number" min="0" asp-for="Insertion.Price" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Insertion.Location">Location:</label>
+            <input asp-for="Insertion.Location" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Insertion.Category">Category:</label>
+            <select asp-for="Insertion.Category" class="form-control" required>
+                <option>Flat</option>
+                <option>House</option>
+                <option>Land</option>
+                <option>Commercial</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Insertion.Type">Type:</label>
+            <input asp-for="Insertion.Type" class="form-control" required />
+            <span asp-validation-for="Insertion.Type" class="alert-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Insertion.Area">Area:</label>
+            <input type="number" min="0" step=".1" asp-for="Insertion.Area" class="form-control" required />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Insertion.ShortDescription">Short description:</label>
+        <textarea asp-for="Insertion.ShortDescription" class="form-control" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Insertion.Description">Description:</label>
+        <textarea asp-for="Insertion.Description" class="form-control" required></textarea>
+    </div>
+    @if (ViewBag.Action == "CreateInsertion")
+    {
+        <div class="mb-1">
+            <label asp-for="Insertion.Photo">Main photo src:</label>
+            <input type="file" asp-for="Insertion.Photo" class="form-control" required />
+        </div>
+    }
+    else
+    {
+        <div class="mb-1">
+            <label asp-for="Insertion.Photo">Main photo src:</label>
+            <label asp-for="Insertion.Photo">@Model.Insertion.Photo</label>
+            <input type="file" asp-for="Insertion.Photo" class="form-control" style="display:none"/>
+        </div>
+    }
+    <div class="mb-3">
+        <label asp-for="Insertion.Disabled">Disabled:</label>
+        <input type="checkbox" asp-for="Insertion.Disabled" />
+    </div>
+
+
+    <div class="Lists">
+        <div>
+            <table class="Photos table table-striped">
+                <tr>
+                    <th>Photos</th>
+                    <th></th>
+                </tr>
+                @for (int i = 0; i < Model.Photos.Count; i++)
+                {
+                    <tr class="photo">
+                        <td>
+                            <input type="hidden" asp-for="Photos[i].Id" />
+                            <label asp-for="Photos[i].Path" class="form-label">@Model.Photos[i].Path</label>
+                            <input type="file" asp-for="Photos[i].Path" style="display:none" />
+                        </td>
+                        <td>
+                            <a asp-controller="AdministratorTools" asp-action="DeletePhoto" asp-route-photoId="@Model.Photos[i].Id" asp-route-insertionId="@Model.Insertion.Id" style="color:red">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <button type="button" onclick="AddPhoto()" class="btn btn-primary">Add Photo</button>
+        </div>
+
+        <div>
+            <table class="Properties table table-striped">
+                <tr>
+                    <th>Properties</th>
+                </tr>
+                @for (int i = 0; i < Model.Properties.Count; i++)
+                {
+                    <tr class="property">
+                        <td>
+                            <input type="hidden" asp-for="Properties[i].Id" />
+                            <select asp-for="Properties[i].PropertyName" class="form-select">
+                                @for (int a = 0; a < ViewBag.AllProperties.Count; a++)
+                                {
+                                    <option value="@ViewBag.AllProperties[a].PropertyName">@ViewBag.AllProperties[a].PropertyName</option>
+                                }
+                            </select>
+                            <input type="text" asp-for="Properties[i].Value" class="form-control"/>
+                        </td>
+                        <td>
+                            <a asp-controller="AdministratorTools" asp-action="DeletePropertyInsertion" asp-route-propertyId="@Model.Properties[i].Id" asp-route-insertionId="@Model.Insertion.Id" style="color:red">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <button type="button" onclick="AddProperty()" class="btn btn-primary">Add Property</button>
+        </div>
+    </div>
+
+    <div class="buttons">
+        @if (ViewBag.Action == "CreateInsertion")
+        {
+            <button class="btn btn-success">Create insertion</button>
+        }
+        else
+        {
+            <button type="reset" class="btn btn-primary">Cancel</button>
+            <button class="btn btn-success">Save changes</button>
+        }
+    </div>
+</form>
+
+<script>
+    let CountPhotos = @Model.Photos.Count - 1;
+
+    function AddPhoto() {
+        CountPhotos += 1;
+
+        let HiddenInput = document.createElement('input');
+        HiddenInput.type = 'hidden';
+        HiddenInput.name = `Photos[${CountPhotos}].Id`;
+
+        let PhotoInput = document.createElement('input');
+        PhotoInput.type = 'file';
+        PhotoInput.name = `Photos[${CountPhotos}].Path`;
+
+        let LabelPhoto = document.createElement('label');
+        LabelPhoto.innerHTML = 'Photo source:';
+
+        let PhotoTr = document.createElement('tr');
+        PhotoTr.className = 'photo';
+        let PhotoTd = document.createElement('td');
+        PhotoTd.appendChild(HiddenInput);
+        PhotoTd.appendChild(LabelPhoto);
+        PhotoTd.appendChild(PhotoInput);
+
+        PhotoTr.appendChild(PhotoTd);
+        let SecondTd = document.createElement('td');
+        PhotoTr.appendChild(SecondTd);
+
+        document.querySelector('.Photos tbody').appendChild(PhotoTr);
+    }
+
+    let CountProperties = @Model.Properties.Count - 1;
+    function AddProperty() {
+        CountProperties += 1;
+
+        let HiddenInput = document.createElement('input');
+        HiddenInput.type = 'hidden';
+        HiddenInput.name = `Properties[${CountProperties}].Id`;
+
+        let PropertyInput = document.createElement('input');
+        PropertyInput.type = 'text';
+        PropertyInput.name = `Properties[${CountProperties}].Value`;
+        PropertyInput.classList = 'form-control';
+
+        let PropertySelect = document.createElement('select');
+        PropertySelect.name = `Properties[${CountProperties}].PropertyName`;
+        PropertySelect.classList = 'form-select';
+
+
+    @{
+        List<string> names = new List<string>();
+        foreach (Property item in ViewBag.AllProperties)
+        {
+            names.Add(item.PropertyName);
+        }
+    }
+            let Options = [@Html.Raw(string.Join(',',names.Select(x => $"'{x}'")))];
+        for (let i = 0; i < Options.length; i++) {
+            let Option = document.createElement('option');
+            Option.value = Options[i];
+            Option.text = Options[i];
+            PropertySelect.appendChild(Option);
+        }
+
+        let PropertyTr = document.createElement('tr');
+        PropertyTr.className = 'property';
+        let PropertyTd = document.createElement('td');
+        PropertyTd.appendChild(HiddenInput);
+        PropertyTd.appendChild(PropertySelect);
+        PropertyTd.appendChild(PropertyInput);
+
+        PropertyTr.appendChild(PropertyTd);
+        let SecondTd = document.createElement('td');
+        PropertyTr.appendChild(SecondTd);
+
+        document.querySelector('.Properties tbody').appendChild(PropertyTr);
+    }
+</script>

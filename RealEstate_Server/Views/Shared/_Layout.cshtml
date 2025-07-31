@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RealEstate</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealEstate_Server.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyCss/Layout.css" />
+
+</head>
+<body>
+    <header>
+        <top>
+            <div class="LoggedAs">
+                @if (ViewBag.Authenticated)
+                {
+                    <span>Logged as: @ViewBag.Username</span>
+                }
+            </div>
+            <div class="Login">
+                @if (ViewBag.Authenticated && ViewBag.Role == "Customer")
+                {
+                    <a class="nav-link text-dark" asp-controller="Customer" asp-action="Index">My Account</a>
+                    <a class="nav-link text-dark" asp-controller="Login" asp-action="Logout">Logout</a>
+                }
+                @if (ViewBag.Authenticated && ViewBag.Role != "Customer")
+                {
+                    <a class="nav-link text-dark" asp-controller="Admin" asp-action="Index">Your Overview</a>
+                }
+                @if (ViewBag.Authenticated && ViewBag.Role != "Customer")
+                {
+                    <a class="nav-link text-dark" asp-controller="AdministratorTools" asp-action="EditAccount">Edit Account</a>
+                    <a class="nav-link text-dark" asp-controller="Login" asp-action="Logout">Logout</a>
+                }
+                else if (!ViewBag.Authenticated)
+                {
+                    <a class="nav-link text-dark" asp-controller="Customer" asp-action="CreateCustomer">Create Customer Account</a>
+                    <a class="nav-link text-dark" asp-controller="Login" asp-action="LoginCustomer">Login</a>
+                }
+            </div>
+        </top>
+        <div class="Menu">
+            <a class="logo" asp-controller="Home" asp-action="Index"><img src="~/Images/logo-dark.png"></a>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Filters" asp-action="Category" asp-route-category="All">Offers</a>
+        </div>
+
+    </header>
+
+
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="Newsletter">
+            <h3>Newsletter</h3>
+            <p>Keep up with the latest company news and events. <br> Enter your e-mail and subscribe to our newslatter.</p>
+            <form method="post">
+                <input required style="height:35px; max-width: 200px; width: 50vw" type="text" placeholder="Enter your emil">
+                <button type="submit" style="background-color: #ff8600; border-radius: 5px; color: white; border: none; padding: 7px">
+                    SEND
+                </button>
+            </form>
+        </div>
+
+        <div class="Links">
+            <h3>Useful links</h3>
+            <ul>
+                <li><a href="">Flats for rent</a></li>
+                <li><a href="">Flats for sale</a></li>
+                <li><a href="">Houses for rent</a></li>
+                <li><a href="">Houses for sale</a></li>
+            </ul>
+
+        </div>
+
+        <div class="News">
+            <h3>News</h3>
+
+            <div>
+                <h5>14.5.2016</h5>
+                <p>
+                    Lorem Ipsum je demonstrativní výplňový text používaný v tiskařském a knihařském průmyslu. Lorem Ipsum je
+                    považováno za standard v této oblasti už od začátku 16. stoletíňový text používaný v tiskařském a
+                    knihařském průmyslu. Lorem Ipsum je považováno za standard v této oblasti už od začátku 16. století
+                </p>
+            </div>
+
+            <div>
+                <h5>14.5.2016</h5>
+                <p>
+                    Lorem Ipsum je demonstrativní výplňový text používaný v tiskařském a knihařském průmyslu. Lorem Ipsum je
+                    považováno za standard v této oblasti už od začátku 16. stoletíňový text používaný v tiskařském a
+                    knihařském průmyslu. Lorem Ipsum je považováno za standard v této oblasti už od začátku 16. století
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

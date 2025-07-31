@@ -1,0 +1,24 @@
+﻿@model Password
+
+<link rel="stylesheet" href="~/MyCss/Authorization.css">
+<form class="Password" asp-controller="@ViewBag.Controller" asp-action="ChangePassword" asp-route-id="@ViewBag.Id">
+    <div class="mb-3">
+        <label asp-for="OldPassword">Old Password:</label>
+        <input type="password" asp-for="OldPassword" class="form-control" required/>
+        <span asp-validation-for="OldPassword" class="alert-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="NewPassword">New Password:</label>
+        <input type="password" asp-for="NewPassword" class="form-control" required />        
+        <span asp-validation-for="NewPassword" class="alert-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="RepeatedPassword">Repeat Password:</label>
+        <input type="password" asp-for="RepeatedPassword" class="form-control" required />
+    </div>
+
+    <button class="btn btn-success">Confirm</button>
+
+</form>

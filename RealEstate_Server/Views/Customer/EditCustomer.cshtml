@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Edit Account";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+@model Customer
+
+<link rel="stylesheet" href="~/MyCss/Authorization.css" />
+<div>
+    <form asp-controller="Customer" asp-action="EditCustomer">
+        <div class="mb-3">
+            <label asp-for="Username">Username:</label>
+            <input asp-for="Username" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Surname">Surname:</label>
+            <input asp-for="Surname" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email">Email:</label>
+            <input type="email" asp-for="Email" class="form-control" required />
+        </div>
+        <div class="Buttons mb-3">
+            <button type="button" class="btn btn-primary"><a asp-controller="Customer" asp-action="ChangePassword">Change Password</a></button>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+        </div>
+    </form>
+</div>

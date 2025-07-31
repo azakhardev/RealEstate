@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RealEstate</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealEstate_Server.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyCss/Layout.css" />
+
+</head>
+
+<body>
+    <header>
+        <top>
+            <div class="LoggedAs">
+                Logged as: @ViewBag.Username
+            </div>
+            <div class="Login">
+                <a class="nav-link text-dark" asp-controller="Customer" asp-action="Exit">Back to website</a>
+                @if (ViewBag.Authenticated)
+                {
+                    <a class="nav-link text-dark" asp-controller="Customer" asp-action="EditCustomer">Edit Account</a>
+                    <a class="nav-link text-dark" asp-controller="Login" asp-action="Logout">Logout</a>
+                }
+            </div>
+        </top>
+
+    </header>
+
+    <div>
+        <main role="main" class="CustomerMain">
+            <div class="Tools">
+                <a asp-controller="Customer" asp-action="Insertions">My Favourite Offers</a>
+                <a asp-controller="Customer" asp-action="Requests">My Requests</a>
+                <a asp-controller="Customer" asp-action="Chats">My Chats</a>
+            </div>
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

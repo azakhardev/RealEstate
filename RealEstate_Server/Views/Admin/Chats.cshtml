@@ -1,0 +1,44 @@
+﻿@{
+    if (ViewBag.All)
+        ViewBag.Title = "All Chats";
+    else
+        ViewBag.Title = "Your Chats";
+    Layout = "~/Views/Shared/_BackendLayout.cshtml";
+    MyContext context = new MyContext();
+}
+<link rel="stylesheet" href="~/MyCss/Table.css">
+
+<div class="Chats">
+    @if (ViewBag.Count == 0)
+    {
+        <div style="text-align: center; font-weight: bold; font-size: 36px;">You have no active chats</div>
+    }
+    else
+    {
+        <table width="100%">
+            <tr class="header">
+                <th>Surname</th>
+                <th>Title</th>
+                @if (ViewBag.All)
+                {
+                    <th>Broker</th>
+                }
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (Chat chat in ViewBag.Chats)
+            {
+                <tr>
+                    <td>@(context.Customers.Find(chat.CustomerId).Surname)</td>
+                    <td>@chat.Title</td>
+                    @if (ViewBag.All)
+                    {
+                        <td>@context.Users.Find(chat.UserId).Surname</td>
+                    }
+                    <td><a asp-controller="Admin" asp-action="Chat" asp-route-chatId="@chat.Id">Open chat</a></td>
+                    <td><a asp-controller="Admin" asp-action="Delete" asp-route-act="DeleteChat" asp-route-name="Chat" asp-route-id="@chat.Id" asp-route-old="Chats" asp-route-all="@ViewBag.All" style="color:red">Delete chat</a></td>
+                </tr>
+            }
+        </table>
+    }
+</div>
