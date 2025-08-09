@@ -1,6 +1,6 @@
-# Realitní server – Webová aplikace v ASP.NET
+# 🏠 Realitní server – Webová aplikace v ASP.NET
 
-## Popis
+## 📋 Popis
 
 Závěrečný školní projekt z programování, na kterém jsme pracovali přibližně dva měsíce. Cílem bylo vytvořit funkční **realitní webovou aplikaci**, která se co nejvíce přiblíží reálným realitním portálům. Projekt sloužil k procvičení práce s technologií **ASP.NET**.
 
@@ -14,7 +14,7 @@ Webová aplikace nabízela různé role a pohledy na základě přihlášení:
 
 Během vývoje jsem se naučil pracovat s komponentami, tvorbou vlastních atributů pro validaci dat, návrhem rozložení (`Layout`) a dalšími klíčovými aspekty ASP.NET.
 
-## Funkce
+## ⚙️ Funkce
 
 - Filtrování a zobrazení inzerátů
 - Role: uživatel, makléř, administrátor
@@ -22,7 +22,7 @@ Během vývoje jsem se naučil pracovat s komponentami, tvorbou vlastních atrib
 - Přihlašování a autorizace
 - Validace vstupních dat (včetně vlastních atributů)
 
-## Technologie
+## 🛠️ Technologie
 
 - **Jazyk**: C#
 - **Framework**: ASP.NET
